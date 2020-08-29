@@ -1,0 +1,14 @@
+Source: libenvpreload
+Section: misc
+Priority: optional
+Maintainer: Daniel Abrecht <deb@danielabrecht.ch>
+Build-Depends: debhelper (>= 11), libx11-dev, libxrandr-dev
+Standards-Version: 4.1.3
+
+Package: libenvpreload
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Set env variables defined in /etc/X11/environment when Xorg is started
+ Most display managers such as lightdm, gdm, etc. clear the environment
+ before starting Xorg without allowing to add anything to it, which can
+ be a problem if that's actually needed for anything.

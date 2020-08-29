@@ -1,0 +1,9 @@
+libenvpreload is a library which if loaded by a program, will read the
+file /etc/X11/environment, and set the veriables defined in there.
+Xorg can be made to load it by adding it to the module section,
+`make install` will do that for you. As to why not to just use
+/etc/environment, some display managers such as lightdm, gdm, etc.
+tend to clear the environment, and don't seam to provide an option
+to add anv variables, so if some MESA env variables are needed
+to get that thing even started or to fix a problem, this was 
+the best way I could come up with to make that possible.
